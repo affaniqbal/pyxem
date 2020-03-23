@@ -86,7 +86,9 @@ class DisplacementGradientMap(Signal2D):
             The strain tensor field.
 
         """
-        RU = self.map(_polar_decomposition, side="right", inplace=False)
+        RU = self.map(_polar_decomposition,
+                      side='right',
+                      inplace=False)
         return RU.isig[:, :, 0], RU.isig[:, :, 1]
 
     def get_strain_maps(self):
